@@ -1,0 +1,1 @@
+No relevant items found yet. (See notes for why and what to collect.) No real hero image exists on the current site (hero is a text wordmark). Candidate hero images are noted in ../../04_ASSET_INVENTORY.md; strong options live in ./team-photos and ./gallery.

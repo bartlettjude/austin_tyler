@@ -1,0 +1,7 @@
+contact_type,value,source_page,context,include_in_new_site,notes
+email,austintylerartistry@gmail.com,Footer (all pages),Footer email under 'AUSTIN TYLER / available to tour',YES,"Only direct contact method. Gmail address — fine, but consider a branded form-first flow."
+instagram,https://www.instagram.com/austintylerartistry/,Header + footer,Social icon,YES,DM is likely a real inbound channel for this audience.
+contact form,/information,Information page (in nav as 'Contact'),'TELL ME ABOUT YOUR PROJECT!' inquiry form,YES,Fields JS-rendered; verify with client. Promises 24–48hr reply.
+contact form (dup),/contact,Orphaned /contact page,'Let’s Work Together' inquiry form,MERGE,Second form. Consolidate into one.
+location,"Greater Nashville, TN (map lat 36.0789, lng -86.6985)",Site settings / Information page,'based in nashville. available for travel.',YES (city only),No street address published (good for a solo creative). Map pin set near Mt. Juliet/Hermitage.
+phone,NONE FOUND,-,No phone number anywhere on site,OPTIONAL,Add only if Austin wants calls/texts; otherwise form + IG is fine.

@@ -1,0 +1,1 @@
+No relevant items found yet. (See notes for why and what to collect.) Only icon in use is the built-in Instagram social icon + the default Squarespace favicon (replace with a real favicon — see notes/developer-notes.md).

@@ -1,0 +1,1 @@
+No relevant items found yet. (See notes for why and what to collect.) The only 'background' assets on the current site are placeholder 'White.jpg' and the blank 'Brian Russell Collins Invoice.png' spacer — both should be removed (use CSS). Not downloaded.

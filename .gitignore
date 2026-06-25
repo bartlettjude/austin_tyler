@@ -1,0 +1,16 @@
+# Dependencies & build output
+node_modules/
+.next/
+out/
+dist/
+
+# Logs & env
+*.log
+.env*
+
+# OS
+.DS_Store
+
+# Screenshots (excluded from repo)
+/_preview/
+/site-rebuild-audit-austin-tyler/screenshots/

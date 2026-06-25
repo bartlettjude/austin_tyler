@@ -1,0 +1,1 @@
+No relevant items found yet. (See notes for why and what to collect.) No third-party embeds (no maps, no YouTube/Vimeo, no booking widgets). Videos are self-hosted Squarespace — see ../videos/VIDEO_MANIFEST.md.

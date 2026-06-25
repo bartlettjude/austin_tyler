@@ -1,0 +1,13 @@
+button_text,source_page,section,destination,purpose,clarity_rating,recommendation,notes
+About Austin →,Home,Bio section,/information,Learn about Austin,2/10,FIX,"MISLEADING: goes to the contact FORM, not an about/bio page. No real About page exists."
+View full gallery →,Home,Showcase collection,/photos,See more photos,8/10,KEEP,Clear. Appears 3x (one per collection) all going to same /photos.
+View full gallery →,Home,Promotional collection,/photos,See more photos,6/10,KEEP/SPLIT,All 3 'view full gallery' go to the same page; consider per-category galleries.
+View full gallery →,Home,Studio collection,/photos,See more photos,6/10,KEEP/SPLIT,Same as above.
+Add To Cart,Store product pages,Product detail,cart/checkout,Book/pay for a package,6/10,KEEP/REWRITE,Default commerce CTA. 'Book This Package' would convert better.
+Instagram icon,All pages,Header + footer,instagram.com/austintylerartistry,Follow on IG,7/10,KEEP,Add visible label/aria on rebuild.
+Nav: 'Contact',All pages,Header nav,/information,Go to inquiry form,4/10,FIX,Label says Contact but URL is /information; confusing + orphan /contact exists.
+[Form submit],Information / Contact,Inquiry form,form handler,Send inquiry,5/10,VERIFY,"Submit button text JS-rendered, not captured. Confirm wording + confirmation message."
+The Echo Project →,The Ecosystem,Template demo,#,(none — placeholder),0/10,REMOVE,Template boilerplate.
+The Brightline Project →,The Ecosystem,Template demo,#,(none — placeholder),0/10,REMOVE,Template boilerplate.
+MISSING: primary hero CTA,Home,Hero,-,Book / get in touch,N/A,ADD,Homepage hero has NO button — only a heading. Add a primary 'Book a session' CTA.
+MISSING: Services/Book CTA in nav,All pages,Header,-,Drive to booking,N/A,ADD,No booking/store link in main nav at all.

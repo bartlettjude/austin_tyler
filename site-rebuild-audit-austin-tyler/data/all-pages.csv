@@ -1,0 +1,15 @@
+page_name,url,page_type,status,notes
+Home,https://www.austintylerartistry.com/,homepage,live,Hero + bio + 3 collections + galleries. Set as homepage.
+Services,https://www.austintylerartistry.com/services,services,live,5 packages w/ prices. Browser <title> still 'Our Story'.
+Photos,https://www.austintylerartistry.com/photos,gallery,live,"~17 portfolio photos, lightbox grid. No intro copy."
+Videos,https://www.austintylerartistry.com/videos,gallery/video,live,6 vertical 9:16 promo videos. One heading only.
+Information,https://www.austintylerartistry.com/information,contact/form,live,ACTUAL contact page used in nav. Inquiry form. Typo 'AUTHENITICTY'.
+Contact,https://www.austintylerartistry.com/contact,contact/form,live-orphaned,Duplicate contact page NOT linked in nav. 'Let’s Work Together'.
+The Ecosystem,https://www.austintylerartistry.com/the-ecosystem,template-junk,live-orphaned,"Unfinished Squarespace demo/template page. In sitemap, not in nav. REMOVE."
+Store,https://www.austintylerartistry.com/store,commerce,live-orphaned,'Store 2'. 5 products = the 5 services. Not in nav. Stock images on 3.
+Store: Live Start-Up,https://www.austintylerartistry.com/store/p/standard-package-czhc3,product,live,"$75. Fine-print typos 'SCHEDUKED','AQUIRED'."
+Store: Live Showcase,https://www.austintylerartistry.com/store/p/standard-package-re4ga-xnrch,product,live,$150.
+Store: Photo Shoot,https://www.austintylerartistry.com/store/p/standard-package-re4ga-gpn7e-pd7jz,product,live,$125. Description is just 'AUSTIN TYLER' (empty).
+Store: Video Shoot,https://www.austintylerartistry.com/store/p/standard-package-re4ga-pnmej-tl32m,product,live,$175. Description empty.
+Store: Photoshoot & Videoshoot,https://www.austintylerartistry.com/store/p/standard-package-re4ga-pnmej-tl32m-gl68b,product,live,$250. Description empty.
+Sereno / Sofia Parazi Photography,https://www.austintylerartistry.com/sereno-sofia-parazi-photography,duplicate,live-orphaned,EXACT duplicate of homepage. Orphaned old slug. REMOVE.

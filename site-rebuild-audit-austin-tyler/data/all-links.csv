@@ -1,0 +1,20 @@
+link_text,url,source_page,link_type,status,recommendation,notes
+(logo),/,All pages,internal-nav,ok,keep,Logo → home.
+Services,/services,All pages,internal-nav,ok,keep,Main nav.
+Photos,/photos,All pages,internal-nav,ok,keep,Main nav.
+Videos,/videos,All pages,internal-nav,ok,keep,Main nav.
+Contact,/information,All pages,internal-nav,ok-confusing,fix,Label 'Contact' points to /information. Rename target or label.
+(Instagram icon),https://www.instagram.com/austintylerartistry/,All pages (header+footer),social,ok,keep,Opens IG profile.
+About Austin →,/information,Home,internal-cta,ok-misleading,fix,"Goes to contact form, not a bio page."
+View full gallery →,/photos,Home (x3),internal-cta,ok,keep,"Three buttons, same destination."
+PHOTOSHOOT & VIDEOSHOOT $250.00,/store/p/standard-package-re4ga-pnmej-tl32m-gl68b,Store,internal-product,ok,keep/rename,Slug is template gibberish.
+LIVE START-UP $75.00,/store/p/standard-package-czhc3,Store,internal-product,ok,keep/rename,Template slug.
+LIVE SHOWCASE $150.00,/store/p/standard-package-re4ga-xnrch,Store,internal-product,ok,keep/rename,Template slug.
+VIDEO SHOOT $175.00,/store/p/standard-package-re4ga-pnmej-tl32m,Store,internal-product,ok,keep/rename,Template slug.
+PHOTO SHOOT $125.00,/store/p/standard-package-re4ga-gpn7e-pd7jz,Store,internal-product,ok,keep/rename,Template slug.
+The Echo Project →,#,The Ecosystem,internal-cta,placeholder,remove,Template demo link.
+The Brightline Project →,#,The Ecosystem,internal-cta,placeholder,remove,Template demo link.
+austintylerartistry@gmail.com,mailto (footer text),Footer,email,ok,keep,Email shown as text in footer.
+/sereno-sofia-parazi-photography,/sereno-sofia-parazi-photography,Sitemap only,internal-orphan,ok-duplicate,remove,Duplicate of homepage; not linked in nav.
+/contact,/contact,Sitemap only,internal-orphan,ok-duplicate,merge,Orphaned duplicate contact page.
+/the-ecosystem,/the-ecosystem,Sitemap only,internal-orphan,template-junk,remove,Not in nav; unfinished template page.

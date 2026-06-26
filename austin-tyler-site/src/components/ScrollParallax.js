@@ -40,10 +40,24 @@ export default function ScrollParallax() {
 
     const update = () => {
       ticking = false;
+
+      // Mobile: don't scroll-drive parallax at all. Phones fire scroll events
+      // sparsely during momentum/fling scrolling, so the per-frame transform
+      // lags the scroll and then snaps — it reads as janky. Leave every element
+      // at rest (clearing any transform left over from a wider layout) and let
+      // the time-based ambient CSS animations carry the motion instead.
+      if (mobileMQ.matches) {
+        for (const it of items) {
+          if (it.applied !== 0) {
+            it.el.style.transform = "";
+            it.applied = 0;
+          }
+        }
+        return;
+      }
+
       const vh = window.innerHeight;
       const center = vh / 2;
-      // Mobile: keep a hint of depth but calm it right down.
-      const damp = mobileMQ.matches ? 0.45 : 1;
 
       // Read pass (measure), then write pass (transform) — avoids layout thrash.
       for (const it of items) {
@@ -54,7 +68,7 @@ export default function ScrollParallax() {
         const baseTop = r.top - (it.axis === "y" ? it.applied : 0);
         const baseCenter = baseTop + r.height / 2;
         const dist = center - baseCenter; // px from viewport centre
-        const shift = dist * it.speed * damp;
+        const shift = dist * it.speed;
         it.applied = shift;
         it.el.style.transform =
           it.axis === "x"

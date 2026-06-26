@@ -129,17 +129,17 @@ export default function HomePage() {
             </Parallax>
             <Parallax speed={0.07} className="sm:col-span-4">
               <Reveal variant="clip" delay={60}>
-                <Photo photo={featured[2]} heightClass="h-[16rem] lg:h-[22rem]" />
+                <Photo photo={featured[2]} priority heightClass="h-[16rem] lg:h-[22rem]" />
               </Reveal>
             </Parallax>
             <Parallax speed={-0.03} className="sm:col-span-4">
               <Reveal variant="clip" delay={120}>
-                <Photo photo={featured[3]} heightClass="h-[16rem] lg:h-[22rem]" />
+                <Photo photo={featured[3]} priority heightClass="h-[16rem] lg:h-[22rem]" />
               </Reveal>
             </Parallax>
             <Parallax speed={0.06} className="sm:col-span-4">
               <Reveal variant="clip" delay={180}>
-                <Photo photo={featured[4]} heightClass="h-[16rem] lg:h-[22rem]" />
+                <Photo photo={featured[4]} priority heightClass="h-[16rem] lg:h-[22rem]" />
               </Reveal>
             </Parallax>
           </div>

@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import { SITE } from "@/data/site";
 
 export const metadata = {
@@ -10,15 +11,17 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="pt-32 md:pt-44 pb-24">
-      <div className="mx-auto max-w-[1300px] px-5 md:px-10">
+    <section className="relative pt-32 md:pt-44 pb-24 overflow-hidden">
+      {/* subtle background texture movement */}
+      <span className="light-leak w-[44vw] h-[44vw] top-[6%] -right-[10%]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-[1300px] px-5 md:px-10">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
           {/* Left — pitch */}
           <div className="md:col-span-5">
             <p className="eyebrow mb-5 fade-up">Let’s work together</p>
-            <h1 className="display text-[14vw] md:text-[7rem] leading-[0.84] fade-up" style={{ animationDelay: "0.1s" }}>
+            <Parallax as="h1" speed={-0.05} className="display text-[14vw] md:text-[7rem] leading-[0.84] fade-up" style={{ animationDelay: "0.1s" }}>
               Book a<br /><span className="italic font-normal text-brown">shoot.</span>
-            </h1>
+            </Parallax>
             <p className="mt-6 text-ink-soft text-lg leading-relaxed max-w-md fade-up" style={{ animationDelay: "0.2s" }}>
               Live show, promo run, dance or country project — tell me what you’re
               planning and I’ll get back to you within 24–48 hours.

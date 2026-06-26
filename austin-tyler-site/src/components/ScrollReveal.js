@@ -13,7 +13,8 @@ import { useEffect } from "react";
 export default function ScrollReveal() {
   useEffect(() => {
     const reveal = (el) => el.classList.add("is-in");
-    const selector = ".reveal:not(.is-in), .reveal-clip:not(.is-in)";
+    const selector =
+      ".reveal:not(.is-in), .reveal-clip:not(.is-in), .reveal-mask:not(.is-in)";
 
     // No IO support → just show everything.
     if (typeof IntersectionObserver === "undefined") {

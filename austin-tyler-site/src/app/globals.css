@@ -197,8 +197,132 @@
 }
 .fade-up { animation: fade-up 0.9s cubic-bezier(0.22,1,0.36,1) both; }
 
+/* ============================================================
+   PARALLAX + MOTION DETAILS
+   Driven by components/ScrollParallax.js (scroll) and a few gentle
+   ambient CSS keyframes. All transform-only and decoupled so reveal,
+   hover and parallax never fight over the same property.
+   ============================================================ */
+
+/* Parallax layer — engine writes translate3d() inline. Own element only. */
+.parallax { will-change: transform; }
+
+/* --- Extra reveal variant: horizontal mask wipe (left → right) --- */
+.reveal-mask {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-mask.is-in { clip-path: inset(0 0 0 0); }
+
+/* --- Stage light-leak: a warm gradient blob that breathes + sways. --- */
+.light-leak {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle at center,
+    rgba(179, 135, 63, 0.55), rgba(154, 106, 67, 0.18) 45%, transparent 70%);
+  animation: leak-drift 14s ease-in-out infinite;
+}
+.light-leak.leak-cool {
+  background: radial-gradient(circle at center,
+    rgba(120, 150, 190, 0.4), rgba(80, 110, 160, 0.12) 45%, transparent 70%);
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+@keyframes leak-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.42; }
+  50%      { transform: translate3d(3%, -4%, 0) scale(1.12); opacity: 0.6; }
+}
+
+/* --- Gentle rhythmic sway (a little dance/country lilt). --- */
+.sway { animation: sway 6.5s ease-in-out infinite; }
+.sway-slow { animation: sway 9s ease-in-out infinite; }
+@keyframes sway {
+  0%, 100% { transform: translateY(0) rotate(-1.2deg); }
+  50%      { transform: translateY(-5px) rotate(1.2deg); }
+}
+
+/* --- Camera-flash sweep on photo frames (subtle, once per hover). --- */
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(115deg,
+    transparent 30%, rgba(255, 250, 240, 0.55) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.frame:hover::before {
+  animation: flash-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes flash-sweep {
+  0%   { opacity: 0; transform: translateX(-120%); }
+  35%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(120%); }
+}
+
+/* --- Old-school film-frame corner ticks (registration marks). --- */
+.ticks { position: relative; }
+.ticks::before, .ticks::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 18px;
+  border: 2px solid currentColor;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.ticks::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+.ticks::after { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+
+/* --- Sticker / badge label (slightly rotated, hand-applied feel). --- */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.62rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0 8px 22px -14px rgba(40, 28, 12, 0.6);
+}
+
+/* --- Marquee strip (slow, old-school ticker; warm + rhythmic). --- */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 2.5rem;
+  align-items: center;
+  padding-right: 2.5rem;
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  .reveal, .reveal-clip { opacity: 1; transform: none; clip-path: none; }
-  .grain { display: none; }
+  .reveal, .reveal-clip, .reveal-mask { opacity: 1; transform: none; clip-path: none; }
+  .grain, .light-leak { display: none; }
+  .parallax, .sway, .sway-slow { transform: none !important; }
+}
+
+/* On phones, drop the heaviest ambient motion to protect battery/scroll. */
+@media (max-width: 768px) {
+  .light-leak { opacity: 0.32; animation: none; }
 }

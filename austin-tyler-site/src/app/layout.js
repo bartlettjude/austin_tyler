@@ -3,6 +3,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
+import ScrollParallax from "@/components/ScrollParallax";
 import { SITE } from "@/data/site";
 
 // Both are variable fonts — omit `weight` to load the full weight range
@@ -38,10 +39,11 @@ export default function RootLayout({ children }) {
       <body>
         {/* If JS is disabled, never hide reveal content. */}
         <noscript>
-          <style>{`.reveal,.reveal-clip{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
+          <style>{`.reveal,.reveal-clip,.reveal-mask{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
         </noscript>
         <div className="grain" aria-hidden="true" />
         <ScrollReveal />
+        <ScrollParallax />
         <SiteHeader />
         <main id="top">{children}</main>
         <SiteFooter site={SITE} />

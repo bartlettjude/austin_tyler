@@ -5,8 +5,10 @@
  * independently of React hydration. If JS never runs, content stays visible
  * (the hidden state is gated behind the `.js` class — see globals.css).
  *
- * variant: "fade" (default) | "clip"
+ * variant: "fade" (default) | "clip" (top→bottom) | "mask" (left→right wipe)
  */
+const VARIANT_CLASS = { fade: "reveal", clip: "reveal-clip", mask: "reveal-mask" };
+
 export default function Reveal({
   children,
   variant = "fade",
@@ -15,7 +17,7 @@ export default function Reveal({
   className = "",
   ...rest
 }) {
-  const base = variant === "clip" ? "reveal-clip" : "reveal";
+  const base = VARIANT_CLASS[variant] || "reveal";
   return (
     <Tag
       className={`${base} ${className}`}

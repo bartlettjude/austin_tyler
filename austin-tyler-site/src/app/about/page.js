@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import Photo from "@/components/Photo";
 import { ABOUT_PHOTO, SERVICES_PHOTO } from "@/data/photos";
 import { SITE } from "@/data/site";
@@ -32,13 +33,15 @@ export default function AboutPage() {
       {/* Bio + portrait */}
       <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-12 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-          <Reveal variant="clip" className="md:col-span-5">
-            <Photo
-              photo={{ src: ABOUT_PHOTO, orientation: "portrait", title: "Austin Tyler", caption: "Behind the camera", category: "lifestyle" }}
-              showMeta={false}
-              priority
-            />
-          </Reveal>
+          <Parallax speed={0.07} className="md:col-span-5 ticks text-clay">
+            <Reveal variant="clip">
+              <Photo
+                photo={{ src: ABOUT_PHOTO, orientation: "portrait", title: "Austin Tyler", caption: "Behind the camera", category: "lifestyle" }}
+                showMeta={false}
+                priority
+              />
+            </Reveal>
+          </Parallax>
 
           <Reveal className="md:col-span-7 md:pt-4" delay={100}>
             <p className="font-display text-2xl md:text-3xl leading-snug text-ink mb-6">
@@ -82,13 +85,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Wide image band */}
-      <section className="py-10 md:py-16">
-        <Reveal variant="clip" className="mx-auto max-w-[1600px] px-5 md:px-10">
-          <div className="frame aspect-[16/8] md:aspect-[16/6]">
-            <img src={SERVICES_PHOTO} alt="Austin filming a live performance on stage" />
-          </div>
-        </Reveal>
+      {/* Wide image band — left→right mask wipe + slow parallax drift */}
+      <section className="py-10 md:py-16 overflow-hidden">
+        <div className="mx-auto max-w-[1600px] px-5 md:px-10">
+          <Parallax speed={0.05}>
+            <Reveal variant="mask">
+              <div className="frame aspect-[16/8] md:aspect-[16/6]">
+                <img src={SERVICES_PHOTO} alt="Austin filming a live performance on stage" />
+              </div>
+            </Reveal>
+          </Parallax>
+        </div>
       </section>
 
       {/* Pull quote */}
